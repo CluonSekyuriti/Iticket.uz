@@ -1,0 +1,29 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/cancer_chart.css">
+    <title>Cancer chart</title>
+{% endblock %}
+{% block name %}
+    Cancer chart
+{% endblock %}
+{% block body %}
+    <div class="big__box">
+        {% for cancers in cancer %}
+            <div class="box">
+                <div class="box__item1">
+                    <img src="{{ cancers.img_url }}" alt="">
+                </div>
+                <div class="box__item2">
+                    <p>{{ cancers.name }}</p>
+                    <p>{{ cancers.singer.name }} {{ cancers.singer.surname }}</p>
+                    <p>{{ cancers.place.name }}</p>
+                    <p>{{ cancers.added_date.strftime("%d-%m-%Y") }}</p>
+                    <p>{{ cancers.price }} So’m </p>
+                </div>
+                <a href="{{ url_for("profile_cancer",cancer_id=cancers.id) }}" class="box__item3">
+                    <p>Sele</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

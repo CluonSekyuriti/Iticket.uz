@@ -1,0 +1,44 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/register_singer.css">
+    <title>Register Singer</title>
+{% endblock %}
+{% block name %}
+    Register Singer
+{% endblock %}
+{% block body %}
+    <form action="{{ url_for('register_singer') }}" method="post" enctype="multipart/form-data" class="big__box">
+        <div class="box1">
+            <div class="box1__item1">
+                <p>Name</p>
+                <input name="name_singer" type="text" placeholder="Entert name">
+            </div>
+            <div class="box1__item1">
+                <p>Number</p>
+                <input name="number_singer" type="text" placeholder="Entert number">
+            </div>
+            <div class="box1__item1">
+                <p>Surname</p>
+                <input name="surname_singer" type="text" placeholder="Entert surname">
+            </div>
+            <div class="box1__item1">
+                <p>Genre</p>
+                <input name="genre_singer" type="text" placeholder="Entert genre">
+            </div>
+            <div class="box1__item1">
+                <p>User name</p>
+                <input name="user_name_singer" type="text" placeholder="Entert user name">
+            </div>
+            <div class="box1__item2">
+                <p>Img</p>
+                <input name="img_singer" type="file">
+            </div>
+        </div>
+        <div class="box2">
+            <a href="">
+                <button>Send</button>
+            </a>
+        </div>
+
+    </form>
+{% endblock %}

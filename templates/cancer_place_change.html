@@ -1,0 +1,32 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/cancer_place_change.css">
+    <title>Cancer place Change</title>
+{% endblock %}
+{% block name %}
+    Cancer place Change
+{% endblock %}
+{% block body %}
+    <form action="{{ url_for('cancer_place_change', cancer_place_id=cancer_place.id) }}" enctype="multipart/form-data"
+          method="post" class="big__box">
+        <div class="box1">
+            <div class="box1__item1">
+                <p>Name</p>
+                <input type="text" value="{{ cancer_place.name }}" name="name" placeholder="Entert name">
+            </div>
+            <div class="box1__item1">
+                <p>Human capacity</p>
+                <input type="text" value="{{ cancer_place.human_capacity }}" name="human_capacity"
+                       placeholder="Entert human capacity">
+            </div>
+        </div>
+        <div class="box2">
+            <div class="box2__item1">
+                <input name="img" type="file">
+            </div>
+            <div class="box2__item1">
+                <button>Send</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

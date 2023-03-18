@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu_list {
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    border-right: 2px solid #B9B7B7;
+    border-radius: 0 40px 40px 0;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: -100%;
+}
+
+.menu_list__box1 {
+    width: 100%;
+    height: 30%;
+    font-size: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.menu_list__box1 p {
+    margin-bottom: 20px;
+}
+
+.menu_list__box2 {
+    width: 100%;
+    height: 70%;
+    font-size: 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.menu_list__box2 p {
+    margin-top: 15px;
+}
+
+.active {
+    left: 0 !important;
+}
+
+.menu {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_1 {
+    width: 100%;
+    height: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu_1_item1 {
+    width: 20%;
+    height: 100%;
+    font-size: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu_1_item1 a{
+    display: flex;
+}
+.menu_1_item1 p:nth-child(1) {
+    color: #414040;
+}
+
+.menu_1_item1 p:nth-child(2) {
+    color: #FFDD00;
+}
+
+.menu_1_item2 {
+    width: 80%;
+    height: 100%;
+    color: black;
+    font-size: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_2 {
+    width: 100%;
+    height: 72%;
+    background-image: url("../rasmlar/Rectangle 22.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_3 {
+    width: 100%;
+    height: 12%;
+    font-size: 50px;
+    display: flex;
+    padding: 20px;
+}
+
+.menu_3_item:hover .menu_list {
+    left: 0;
+    border-radius: 0 40px 40px 0;
+}

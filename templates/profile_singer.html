@@ -1,0 +1,34 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/profile_singer.css">
+    <title>Profile Singer</title>
+{% endblock %}
+{% block name %}
+    Profile Singer
+{% endblock %}
+{% block body %}
+    <div class="big__box">
+        <div class="box2__item1">
+            <div class="box1">
+                <img src="/{{ singer.img_url }}" alt="">
+            </div>
+            <div class="box2">
+                <p>Name: {{ singer.name }} </p>
+                <p>Surname: {{ singer.surname }} </p>
+                <p>Username: {{ singer.user_name }}</p>
+                <p>Number: {{ singer.number }} </p>
+                <p>Genre: {{ singer.genre }}</p>
+            </div>
+            <div class="box3">
+                {% for singer in  singer.cancer %}
+                    <p>Cancer: {{ singer.name }} {{ singer.added_date.strftime("%d-%m-%Y") }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="box2__item2">
+            <a href="">Sale</a>
+            <a href="{{ url_for('singer_change', singer_id=singer.id) }}">Change</a>
+            <a href="{{ url_for('delete_singer', singer_id=singer.id) }}">Delete</a>
+        </div>
+    </div>
+{% endblock %}

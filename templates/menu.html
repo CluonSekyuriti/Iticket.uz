@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../static/css/menu.css">
+    {% block link %}
+
+    {% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<div class="menu_list">
+    <div class="menu_list__box1">
+        <p>Menu</p>
+    </div>
+    <div class="menu_list__box2">
+        <ul>
+            <li><a href="{{ url_for("cancer_chart") }}">Cancer Chart</a></li>
+            <li><a href="{{ url_for("register_cancer") }}">Cancer Register</a></li>
+            <li><a href="{{ url_for("singer_chart") }}">Singer Chart</a></li>
+            <li><a href="{{ url_for("register_singer") }}">Singer Register</a></li>
+            <li><a href="{{ url_for("cancer_place_chart") }}">Cancer Place Chart</a></li>
+            <li><a href="{{ url_for("register_cancer_place") }}">Cancer Place Register</a></li>
+        </ul>
+    </div>
+</div>
+<div class="menu">
+    <div class="menu_1">
+        <div class="menu_1_item1">
+            <a href="{{ url_for("cancer_chart") }}">
+                <p>Iticket</p>
+                <p>.uz</p>
+            </a>
+        </div>
+        <div class="menu_1_item2">
+            <p>{% block name %}{% endblock %}</p>
+        </div>
+    </div>
+    <div class="menu_2">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+    <div class="menu_3">
+        <div class="menu_3_item i">
+            <i class="fa-solid fa-angles-right"></i>
+        </div>
+    </div>
+</div>
+<script src="../static/java/menu.js"></script>
+</body>
+</html>

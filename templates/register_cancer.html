@@ -1,0 +1,56 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/register_cancer.css">
+    <title>Register Cancer </title>
+{% endblock %}
+{% block name %}
+    Register Cancer
+{% endblock %}
+{% block body %}
+    <form action="{{ url_for('register_cancer') }}" method="post" enctype="multipart/form-data" class="big__box">
+        <div class="box1">
+            <div class="box1__item1">
+                <p>Name</p>
+                <input name="name" type="text" placeholder="Entert name">
+            </div>
+            <div class="box1__item1">
+                <p>Place</p>
+                <select name="singer_id" id="select">
+                    {% for singer in singers %}
+                        <option value="{{ singer.id }}">{{ singer.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="box1__item1">
+                <p>Cancer Owner</p>
+                <select name="place_id" id="select">
+                    {% for cancer_place in cancer_places %}
+                        <option value="{{ cancer_place.id }}">{{ cancer_place.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="box1__item1">
+                <p>Date</p>
+                <input name="date" type="date">
+                <p class="error">{{ error }}</p>
+            </div>
+            <div class="box1__item1">
+                <p>Price</p>
+                <input name="price" type="text" placeholder="Entert price">
+            </div>
+            <div class="box1__item1">
+                <p>Time</p>
+                <input name="time2" type="time">
+            </div>
+        </div>
+        <div class="box2">
+            <div class="box2__item1">
+                <p>Img</p>
+                <input name="img_url" type="file">
+            </div>
+            <div class="box2__item1">
+                <button>Send</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

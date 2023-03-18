@@ -1,0 +1,30 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/profile_cancer.css">
+    <title>Profile Cancer</title>
+{% endblock %}
+{% block name %}
+    Profile Cancer
+{% endblock %}
+{% block body %}
+    <div class="big__box">
+        <div class="box1">
+            <img src="/{{ cancer.img_url }}" alt="">
+        </div>
+        <div class="box2">
+            <div class="box2__item1">
+                <p>Name: {{ cancer.name }}</p>
+                <p>Singer: {{ cancer.singer.name }} {{ cancer.singer.surname }}</p>
+                <p>Place: {{ cancer.place.name }}</p>
+                <p>Time: {{ cancer.added_date.strftime("%d-%m-%Y") }}</p>
+                <p>Price: {{ cancer.price }} So'm</p>
+            </div>
+            <div class="box2__item2">
+                <a href="">Sale</a>
+                <a href="{{ url_for('cancer_change', cancer_id=cancer.id) }}">Change</a>
+                <a href="{{ url_for('delete_cancer', cancer_id=cancer.id) }}">Delete</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

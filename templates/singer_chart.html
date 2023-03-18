@@ -1,0 +1,32 @@
+{% extends 'menu.html' %}
+{% block link %}
+    <link rel="stylesheet" href="../static/css/singer_chart.css">
+    <title>Singer chart</title>
+{% endblock %}
+{% block name %}
+    Singer chart
+{% endblock %}
+{% block body %}
+    <div class="box__father">
+        {% for singers in singer %}
+            <div class="box">
+                <div class="box__item1">
+                    <img src="{{ singers.img_url }}" alt="">
+                </div>
+                <div class="box__item2">
+                    <p>{{ singers.name }}</p>
+                    <p>{{ singers.surname }}</p>
+                </div>
+                <div class="box__item3">
+                    <p>Tel: {{ singers.number }} </p>
+                    <p>Genre: {{ singers.genre }}</p>
+                </div>
+                <div class="box__item4">
+                    <a href="{{ url_for("profile_singer",singers_id=singers.id) }}">
+                        <button>More</button>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
